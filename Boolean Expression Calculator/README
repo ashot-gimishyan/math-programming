@@ -1,0 +1,25 @@
+The program evaluates the value of a boolean expression represented in postfix notation.
+The input boolean expression can include "0", "1", as well as the following operators: "!", "&&", "||".
+To calculate the value of the expression the data structure "stack" is used.
+
+Test examples:
+
+input               output
+0!0&&                 0
+0!0||                 1
+0!0&&1||              1
+11&&0||0!||           1
+
+The logic of the program:
+We go from left to right
+- if there is 0 or 1, then put on the stack
+- if ! occurs, apply the negation operation to the top of the stack
+- if & occurs, apply the conjunction operation to the last two elements of the stack
+- if | occurs, apply the disjunction operation to the last two elements of the stack
+- if & or | occurs, since they come in pairs, we pass the second one through getchar()
+
+In terms of input, the boolean expressions "0!0&&=" and "0 ! 0 && =" are equivalent.
+To test the program, you must first compile: gcc main.c -o BoolCalc
+Then open: ./BoolCalc
+And on the input stream write any boolean expression in postfix notation correctly:
+For example, at the input "0 ! =" we get the result "Result: 1".
