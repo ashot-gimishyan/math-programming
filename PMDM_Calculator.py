@@ -55,7 +55,7 @@ class Calculator(object):
             if operators_list[o] == '-':
                 x = numbers_list.pop(0)
                 y = numbers_list.pop(0)
-                numbers_list.insert(0, float(x) - float(y))
+                numbers_list.insert(0,  float(x) - float(y))
 
         return numbers_list[0]
 
